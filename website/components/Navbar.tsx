@@ -11,7 +11,11 @@ export const Navbar: React.FC = () => {
   return (
     <div className={styles.navbar_container}>
       <nav className={styles.navbar}>
-        <h1 className={styles.logo}>Wanderlust</h1>
+        <h1 className={styles.logo}>
+          <Link href={'/'}>
+            <a>Wanderlust</a>
+          </Link>
+        </h1>
         {logged ? (
           <div className='buttons'>
             <div className={`avatar_dropdown ${show}`}>
