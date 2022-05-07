@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className={styles.footer + ' ' + footerPosition}>
-      <h2 className={styles.footer_title}>Wanderlust</h2>
+      <h2 className={styles.footer_title}>Wanderlust ©2022</h2>
       <ul className={styles.footer_links}>
         <li>
           <a href='#' className={styles.footer_link}>
