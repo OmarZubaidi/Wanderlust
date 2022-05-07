@@ -41,6 +41,12 @@
 
 .store_buttons {
   margin-top: 20px;
+  display: flex;
+  width: 200px;
+}
+
+.store_button {
+  margin-right: 15px;
 }
 
 @media (min-width: 768px) {

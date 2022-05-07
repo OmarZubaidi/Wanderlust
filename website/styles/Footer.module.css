@@ -3,6 +3,7 @@
   justify-content: space-between;
   padding: 10px 20px;
   border-top: solid #ccc 0.8px;
+  background-color: #fff;
 }
 
 .footer_links {
@@ -19,4 +20,8 @@
 .footer_title {
   color: #394a59;
   font-weight: 600;
+}
+
+.footer_container {
+  padding-top: 50px;
 }

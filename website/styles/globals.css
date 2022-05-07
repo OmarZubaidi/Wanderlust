@@ -132,3 +132,59 @@ p {
   bottom: 0;
   width: 100%;
 }
+
+.tripbg {
+  background-image: url('../public/assets/tripFormbg.jpg');
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+}
+
+.friendsbg {
+  background-image: url('../public/assets/friendsbg.jpg');
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+}
+
+.flightbg {
+  background-image: url('../public/assets/flightbg.jpg');
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+}
+
+.hotelbg {
+  background-image: url('../public/assets/hotelbg.jpg');
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+}
