@@ -1,0 +1,49 @@
+.container {
+  grid-column: 0/1;
+  background-color: #60a7c0;
+  height: 70vh;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.trips_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.add_trip {
+  display: block;
+  background: transparent;
+  background-image: url('../../public/assets/PlusButton.svg');
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.trip_search {
+  border-radius: 5px;
+  padding: 2px 10px;
+  width: 100%;
+  font-size: 14px;
+  color: #394a59;
+}
+
+.trip_search:focus,
+.trip_search:active {
+  border-radius: 5px;
+  outline: none;
+}
+
+.trips {
+  margin-top: 20px;
+}
+
+.trip {
+  margin-bottom: 15px;
+  color: #fff;
+  font-size: 18px;
+}

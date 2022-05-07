@@ -33,22 +33,28 @@ export const LandingPageSections: React.FC = () => {
             dolorum natus!
           </p>
           <div className={styles.store_buttons}>
-            <button>
-              <Image
-                width={100}
-                height={100}
-                src='/assets/AppStore.png'
-                alt='app store'
-              />
-            </button>
-            <button>
-              <Image
-                width={80}
-                height={80}
-                src='/assets/GooglePlayStore.png'
-                alt='app store'
-              />
-            </button>
+            <Image
+              width={80}
+              height={80}
+              src='/assets/AppStore.svg'
+              alt='app store'
+              style={{
+                backgroundColor: '#fff',
+                paddingRight: 10,
+                cursor: 'pointer',
+              }}
+            />
+            <Image
+              width={80}
+              height={80}
+              src='/assets/GooglePlayStore.svg'
+              alt='app store'
+              style={{
+                backgroundColor: '#fff',
+                paddingLeft: 10,
+                cursor: 'pointer',
+              }}
+            />
           </div>
         </article>
       </section>
