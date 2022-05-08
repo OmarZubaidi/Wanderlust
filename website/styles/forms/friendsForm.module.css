@@ -1,0 +1,106 @@
+.friendsForm {
+  width: 700px;
+  height: 400px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 50px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  display: flex;
+  position: relative;
+}
+
+.goBack {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 20px;
+  left: 20px;
+  transform: rotate(180deg);
+}
+
+.title {
+  align-self: start;
+  margin-bottom: 10px;
+}
+
+.left {
+  width: 350px;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+
+.input_field {
+  border: 2px solid #cbd2e0;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.submit_description {
+  font-size: 13px;
+  margin-top: 30px;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.finalize {
+  background-color: #60a7c0;
+}
+
+.finalize:hover {
+  background-color: #82afc1;
+  cursor: pointer;
+}
+
+.continue {
+  margin-left: 20px;
+  background-color: transparent;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  background-image: url('../../public/assets/arrow.svg');
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  margin-left: 5px;
+}
+
+.userList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 300px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.friends_title {
+  font-weight: 600;
+  color: #394a59;
+}
+
+.avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 25px;
+  background-color: #011526;
+  margin-right: 5px;
+}
