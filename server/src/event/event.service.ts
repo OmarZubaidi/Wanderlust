@@ -9,13 +9,13 @@ import { PrismaClientKnownRequestError } from '@prisma/client/runtime';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateEventDto } from './dto/create-event.dto';
 import { UpdateEventDto } from './dto/update-event.dto';
-import { Event } from './interface/Event';
+import { EventType } from './interface/Event';
 
 @Injectable()
 export class EventService {
   constructor(private prisma: PrismaService) {}
 
-  async create(createEventDto: CreateEventDto): Promise<Event> {
+  async create(createEventDto: CreateEventDto): Promise<EventType> {
     try {
       const {
         title,
@@ -70,7 +70,7 @@ export class EventService {
     }
   }
 
-  async findAll(): Promise<Event[]> {
+  async findAll(): Promise<EventType[]> {
     try {
       const events = await this.prisma.event.findMany();
       // return 404 if no events were found
@@ -81,7 +81,7 @@ export class EventService {
     }
   }
 
-  async findById(id: string): Promise<Event> {
+  async findById(id: string): Promise<EventType> {
     try {
       const event = await this.prisma.event.findUnique({
         where: {
@@ -96,7 +96,7 @@ export class EventService {
     }
   }
 
-  async update(id: string, updateEventDto: UpdateEventDto): Promise<Event> {
+  async update(id: string, updateEventDto: UpdateEventDto): Promise<EventType> {
     const {
       title,
       start,
@@ -142,7 +142,7 @@ export class EventService {
     }
   }
 
-  async deleteById(id: string): Promise<Event> {
+  async deleteById(id: string): Promise<EventType> {
     try {
       const deleted = this.prisma.event.delete({
         where: {

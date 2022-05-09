@@ -62,6 +62,12 @@ export class TripService {
         where: {
           id: +id,
         },
+        include: {
+          Hotels: true,
+          Flights: true,
+          Events: true,
+          UsersOnTrips: true,
+        },
       });
       // return 404 if no trip was found
       if (!trip) throw new NotFoundException();
