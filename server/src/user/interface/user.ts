@@ -1,3 +1,6 @@
+import { Hotel } from '../../hotel/interface/Hotel';
+import { Flight } from '../../flight/interface/Flight';
+
 export interface User {
   id: number;
   email: string;
@@ -10,36 +13,6 @@ export interface User {
   Hotels?: Hotel[];
   Flights?: Flight[];
   UsersOnTrips?: UsersOnTrips[];
-}
-
-export interface Hotel {
-  id: number;
-  name: string;
-  location: string;
-  coordinates: string;
-  arrival: Date;
-  departure: Date;
-  nights: number;
-  priceTotal: string;
-  hotelApiId: number;
-  userId: number;
-  tripId: number;
-  createdAt: Date;
-}
-
-export interface Flight {
-  id: number;
-  departure: Date;
-  arrival: Date;
-  gate: string;
-  depAirport: string;
-  arrAirport: string;
-  lengthOfFlight: string;
-  price: string;
-  flightApiId: number;
-  userId: number;
-  tripId: number;
-  createdAt: Date;
 }
 
 export interface UsersOnTrips {
