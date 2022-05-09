@@ -105,6 +105,8 @@ export class UserService {
         },
       });
       return updated;
-    } catch (error) {}
+    } catch (error) {
+      return error;
+    }
   }
 }
