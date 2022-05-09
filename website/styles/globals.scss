@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+@import 'variables';
 
 * {
   margin: 0;
@@ -27,10 +28,6 @@ input[type='submit'] {
   outline: none;
 }
 
-h2 + .user_review {
-  border-top: 1px solid black;
-}
-
 /* This is useful when implementing a grid system so that all image elements
 will take up 100% width of their containers */
 img {
@@ -41,7 +38,7 @@ img {
 
 a {
   display: block;
-  color: black;
+  color: $darkTextColor;
   text-decoration: none;
 }
 
@@ -49,42 +46,46 @@ a {
   width: 100px;
   height: 40px;
   border-radius: 10px;
-  color: #fff;
+  color: $white;
   font-weight: 600;
 }
 
 .login_button {
-  background-color: #5e9cb5;
-}
-.login_button:hover {
-  background-color: #82afc1;
-  cursor: pointer;
+  background-color: $mainBlue;
+  transition: all 300ms ease;
+
+  &:hover {
+    background-color: $mainBlueHover;
+    cursor: pointer;
+  }
 }
 
 .signup_button {
-  background-color: #e49a85;
+  background-color: $mainPink;
   margin-left: 15px;
-}
-.signup_button:hover {
-  background-color: #e4afa0;
-  cursor: pointer;
+  transition: all 300ms ease;
+
+  &:hover {
+    background-color: $mainPinkHover;
+    cursor: pointer;
+  }
 }
 
 .titleH2 {
-  color: #394a59;
+  color: $darkTextColor;
   font-weight: 700;
   font-size: 36px;
   margin-bottom: 5px;
 }
 
 .titleH3 {
-  color: #fff;
+  color: $white;
   font-weight: 600;
   font-size: 30px;
 }
 
 p {
-  color: #011526;
+  color: $darkTextColor;
 }
 
 .avatar {
@@ -105,20 +106,20 @@ p {
   height: 100px;
   padding: 10px;
   border-radius: 15px;
-  background-color: #525252;
+  background-color: $dropdownBG;
   top: 45px;
   right: 0px;
-  transition: opacity 200 ease;
+  transition: opacity 200ms ease;
 }
 .show {
   opacity: 1;
 }
 .avatar_dropdown a {
-  color: #fff;
+  color: $white;
   padding: 10px;
 }
 #logout_button {
-  border-top: solid #ccc 0.8px;
+  border-top: solid $inputBorderColor 0.8px;
 }
 
 .buttons {
