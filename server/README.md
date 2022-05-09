@@ -46,6 +46,7 @@ Routes:
 # find all users
 GET /users
 # find user by id
+# includes Hotels, Flights, UsersOnTrips
 GET /users/:id
 # find user by email
 GET /users/email/:email
@@ -69,7 +70,6 @@ CreateUserDto:
     "pictureUrl": "urltoimage",
     "origin": "milano", // optional
 }
-UpdateUserDto: Same as above but everything optional.
 ```
 
 ### Hotel
@@ -215,7 +215,8 @@ Routes:
 ```bash
 # find all trip
 GET /trip
-# find tripby id
+# find tripby id, 
+# includes Hotels, Flights, Events, UsersOnTrips
 GET /trip/:id
 # create new trip-> look at CreateUsersOnTripDto below for example
 POST /trip

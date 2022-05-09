@@ -32,6 +32,11 @@ export class UserService {
         where: {
           id: +id,
         },
+        include: {
+          Hotels: true,
+          Flights: true,
+          UsersOnTrips: true,
+        },
       });
       // return 404 if no user was found
       if (!user) throw new NotFoundException();
