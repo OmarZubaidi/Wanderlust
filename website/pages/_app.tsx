@@ -1,17 +1,21 @@
 import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
 import { Layout } from '../components/Layout';
-import colors from '../styles/variables.module.scss';
-import { UserProvider } from '@auth0/nextjs-auth0';
+
+type Props = {
+  children?: React.ReactNode;
+};
+
+const AppNotLogged: React.FC<Props> = ({ children }) => {
+  return <Layout>{children}</Layout>;
+};
+
+const AppLogged: React.FC<Props> = ({ children }) => {
+  return <Layout>{children}</Layout>;
+};
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <UserProvider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </UserProvider>
-  );
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;

@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import styles from '../styles/Navbar.module.scss';
-import { logged } from '../mockAuth';
 import Link from 'next/link';
+import { useAuth0 } from '@auth0/auth0-react';
 
-export const Navbar: React.FC = () => {
+type NavbarProos = {
+  logged: boolean;
+};
+
+export const Navbar: React.FC<NavbarProos> = ({ logged }) => {
   const [open, setOpen] = useState(false);
+
+  const { loginWithRedirect, logout } = useAuth0();
 
   const show = open ? 'show' : undefined;
 
@@ -22,9 +28,12 @@ export const Navbar: React.FC = () => {
               <Link href={'/'}>
                 <a>Account</a>
               </Link>
-              <Link href={'/'}>
-                <a id='logout_button'>Logout</a>
-              </Link>
+              <a
+                id='logout_button'
+                onClick={() => logout({ returnTo: 'http://localhost:3000' })}
+              >
+                Logout
+              </a>
             </div>
             <button
               onClick={() => setOpen((prev) => !prev)}
@@ -33,11 +42,21 @@ export const Navbar: React.FC = () => {
           </div>
         ) : (
           <div className='buttons'>
-            <button className={'login_button button'}>
-              <a href='/api/auth/login'>Login</a>
+            <button
+              className={'login_button button'}
+              onClick={() => loginWithRedirect()}
+            >
+              Login
             </button>
-            <button className={'button signup_button'}>
-              <a href='/api/auth/signup'>Register</a>
+            <button
+              onClick={() =>
+                loginWithRedirect({
+                  screen_hint: 'signup',
+                })
+              }
+              className={'button signup_button'}
+            >
+              Register
             </button>
           </div>
         )}
