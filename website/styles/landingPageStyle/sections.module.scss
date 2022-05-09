@@ -1,3 +1,5 @@
+@import '../mixins';
+
 .sections {
   max-width: 80%;
   margin: 0 auto;
@@ -49,7 +51,7 @@
   margin-right: 15px;
 }
 
-@media (min-width: 768px) {
+@include desktop() {
   .section {
     flex-direction: row;
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles/dashboard/index.module.css';
+import styles from '../../styles/dashboard/index.module.scss';
 import { SideBar } from './SideBar';
 
 type Props = {

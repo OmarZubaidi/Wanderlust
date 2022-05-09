@@ -1,6 +1,8 @@
+@import '../variables';
+
 .container {
   grid-column: 0/1;
-  background-color: #60a7c0;
+  background-color: $mainBlue;
   height: 70vh;
   border-radius: 20px;
   padding: 20px;

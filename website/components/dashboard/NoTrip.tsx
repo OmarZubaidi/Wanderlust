@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React from 'react';
-import styles from '../../styles/dashboard/noTrip.module.css';
+import styles from '../../styles/dashboard/noTrip.module.scss';
 
 export const NoTrip: React.FC = () => {
   const router = useRouter();

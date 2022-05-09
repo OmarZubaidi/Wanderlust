@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles/landingPageStyle/sections.module.css';
+import styles from '../../styles/landingPageStyle/sections.module.scss';
 import Image from 'next/image';
 
 export const LandingPageSections: React.FC = () => {
