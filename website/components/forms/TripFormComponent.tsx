@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FormEvent } from 'react';
-import styles from '../../styles/forms/tripForm.module.css';
+import styles from '../../styles/forms/tripForm.module.scss';
 
 export const TripFormComponent: React.FC = () => {
   const router = useRouter();

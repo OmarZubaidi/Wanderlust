@@ -1,7 +1,9 @@
+@import '../variables';
+
 .tripForm {
   width: 700px;
   height: 400px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: $inputFormBG;
   padding: 50px;
   display: flex;
   align-items: center;
@@ -28,7 +30,7 @@
 }
 
 .input_field {
-  border: 2px solid #cbd2e0;
+  border: 2px solid $inputBorderColor;
   border-radius: 5px;
   padding: 5px;
 }
@@ -38,10 +40,10 @@
 }
 
 .continue {
-  background-color: #60a7c0;
+  background-color: $mainBlue;
 }
 
 .continue:hover {
-  background-color: #82afc1;
+  background-color: $mainBlueHover;
   cursor: pointer;
 }

@@ -1,6 +1,8 @@
+@import '../variables';
+
 .container {
   grid-column: 0/1;
-  background-color: #60a7c0;
+  background-color: $mainBlue;
   height: 70vh;
   border-radius: 20px;
   padding: 20px;
@@ -29,7 +31,7 @@
   padding: 2px 10px;
   width: 100%;
   font-size: 14px;
-  color: #394a59;
+  color: $darkTextColor;
 }
 
 .trip_search:focus,
@@ -44,7 +46,7 @@
 
 .trip {
   margin-bottom: 15px;
-  color: #fff;
+  color: $white;
   font-size: 18px;
 }
 

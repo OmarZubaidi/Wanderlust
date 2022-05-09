@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import styles from '../../styles/dashboard/SideBar.module.css';
+import styles from '../../styles/dashboard/SideBar.module.scss';
 
 export const SideBar: React.FC = () => {
   const router = useRouter();
