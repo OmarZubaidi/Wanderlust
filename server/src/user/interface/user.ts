@@ -6,10 +6,10 @@ export interface User {
   emailVerified: boolean;
   pictureUrl: string;
   origin?: string;
+  createdAt: Date;
   Hotels?: Hotel[];
   Flights?: Flight[];
   UsersOnTrips?: UsersOnTrips[];
-  createdAt: Date;
 }
 
 export interface Hotel {
