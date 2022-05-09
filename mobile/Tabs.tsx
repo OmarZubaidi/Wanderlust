@@ -40,8 +40,8 @@ function options({ route }: OptionsProps) {
       backgroundColor: colorStyles.blue,
     },
     headerTitle: 'Wanderlust',
-    tabBarActiveTintColor: colorStyles.darkBlue,
-    tabBarInactiveTintColor: colorStyles.background,
+    tabBarActiveTintColor: colorStyles.background,
+    tabBarInactiveTintColor: colorStyles.darkBlue,
     tabBarItemStyle: {
       marginTop: 10,
       paddingBottom: 10,
