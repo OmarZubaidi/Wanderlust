@@ -1,8 +1,11 @@
 import React from 'react';
 import styles from '../styles/Footer.module.scss';
-import { logged } from '../mockAuth';
 
-export const Footer: React.FC = () => {
+type FooterProps = {
+  logged: boolean;
+};
+
+export const Footer: React.FC<FooterProps> = ({ logged }) => {
   let footerPosition = logged ? 'footerPosition' : undefined;
 
   return (
