@@ -33,8 +33,12 @@ export const Navbar: React.FC = () => {
           </div>
         ) : (
           <div className='buttons'>
-            <button className={'login_button button'}>Login</button>
-            <button className={'button signup_button'}>Register</button>
+            <button className={'login_button button'}>
+              <a href='/api/auth/login'>Login</a>
+            </button>
+            <button className={'button signup_button'}>
+              <a href='/api/auth/signup'>Register</a>
+            </button>
           </div>
         )}
       </nav>
