@@ -6,9 +6,14 @@ import { PrismaModule } from './prisma/prisma.module';
 import { UserController } from './user/user.controller';
 import { UserModule } from './user/user.module';
 import { UserService } from './user/user.service';
+import { HotelModule } from './hotel/hotel.module';
+import { FlightModule } from './flight/flight.module';
+import { EventModule } from './event/event.module';
+import { UsersOnTripsModule } from './users-on-trips/users-on-trips.module';
+import { TripModule } from './trip/trip.module';
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }), PrismaModule, UserModule],
+  imports: [ConfigModule.forRoot({ isGlobal: true }), PrismaModule, UserModule, HotelModule, FlightModule, EventModule, UsersOnTripsModule, TripModule],
   controllers: [AppController, UserController],
   providers: [AppService, UserService],
 })

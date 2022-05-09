@@ -1,12 +1,15 @@
 import {
   ForbiddenException,
+  HttpException,
+  HttpStatus,
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { CreateUserDto, UpdateUserDto } from './dtos/user';
-import { User } from './interface/user';
+import { CreateUserDto } from './dtos/create-user-dto';
+import { UpdateUserDto } from './dtos/update-user-dto';
+import { User } from './interface/User';
 
 @Injectable()
 export class UserService {
@@ -68,10 +71,18 @@ export class UserService {
       return user;
     } catch (error) {
       if (error instanceof PrismaClientKnownRequestError) {
-        // if user exists, error P2002
+        // if hotel exists, error P2002
         if (error.code === 'P2002') {
           throw new ForbiddenException('Credentials taken');
         }
+      } else {
+        throw new HttpException(
+          {
+            status: HttpStatus.NOT_ACCEPTABLE,
+            error: 'Missing properties + ' + error,
+          },
+          HttpStatus.NOT_ACCEPTABLE,
+        );
       }
     }
   }
@@ -90,18 +101,20 @@ export class UserService {
   }
 
   async update(id: string, updateUserDto: UpdateUserDto): Promise<User> {
+    const { email, username, sub, emailVerified, pictureUrl, origin } =
+      updateUserDto;
     try {
       const updated = this.prisma.user.update({
         where: {
           id: +id,
         },
         data: {
-          email: updateUserDto.email,
-          username: updateUserDto.username,
-          sub: updateUserDto.sub,
-          emailVerified: updateUserDto.emailVerified,
-          pictureUrl: updateUserDto.pictureUrl,
-          origin: updateUserDto.origin,
+          email,
+          username,
+          sub,
+          emailVerified,
+          pictureUrl,
+          origin,
         },
       });
       return updated;

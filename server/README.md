@@ -51,8 +51,10 @@ GET /users/:id
 GET /users/email/:email
 # create new user -> look at CreateUserDto below for example
 POST /users
-# update user -> look at UpdateUserDto for updatable properties
+# update user -> look at CreateUserDto for updatable properties
 PATCH /users/:id
+# delete user
+DELETE /users/:id
 ```
 
 Data Transfer Objects:
@@ -67,14 +69,169 @@ CreateUserDto:
     "pictureUrl": "urltoimage",
     "origin": "milano", // optional
 }
+UpdateUserDto: Same as above but everything optional.
+```
 
-UpdateUserDto:
+### Hotel
+
+Routes:
+
+```bash
+# find all hotels
+GET /hotels
+# find hotel by id
+GET /hotels/:id
+# create new hotel-> look at CreateHotelDto below for example
+POST /hotels
+# update hotel -> look at CreateHotelDto for updatable properties
+PATCH /hotels/:id
+# delete hotel
+DELETE /hotels/:id
+```
+
+Data Transfer Objects:
+
+```json
+CreateHotelDto:
 {
-    "email": "test@test.at",
-    "username": "test",
-    "sub": "2ssqwe123asd23",
-    "emailVerified": false,
-    "pictureUrl": "urltoimage",
-    "origin": "milano",
+    "name": "Teds Plaza",
+    "location": "Austria",
+    "coordinates": "123, 5678",
+    "arrival": "2032-05-09T14:15:18.532Z",
+    "departure": "2022-05-09T14:15:18.532Z",
+    "nights": 5,
+    "priceTotal": "303 €",
+    "hotelApiId": 142,
+    "userId": 14,
+    "tripId": 1
+}
+```
+
+### Flight
+
+Routes:
+
+```bash
+# find all flights
+GET /flights
+# find flight by id
+GET /flights/:id
+# create new flight -> look at CreateFlightDto below for example
+POST /flights
+# update flights -> look at CreateFlightDto below for updatable properties
+PATCH /flights/:id
+# Delete flight
+DELETE /flights/:id
+```
+
+Data Transfer Objects:
+
+```json
+CreateFlightDto:
+{
+    "departure": "1970-01-01T00:00:00.000Z",
+    "arrival": "1970-01-01T00:00:00.000Z",
+    "gate": "B",
+    "depAirport": "Barcelona",
+    "arrAirport": "Berlin",
+    "lengthOfFlight": "2:30 h",
+    "price": "230 €",
+    "flightApiId": 1234,
+    "userId": 16,
+    "tripId": 2,
+}:
+```
+
+### Event
+
+Routes:
+
+```bash
+# find all events
+GET /events
+# find event by id
+GET /events/:id
+# create new flight -> look at CreateEventDto below for example
+POST /events
+# update flights -> look at CreateEventDto below for updatable properties
+PATCH /events/:id
+# Delete event
+DELETE /events/:id
+```
+
+Data Transfer Objects:
+
+```json
+CreateEventDto:
+{
+    "title": "Lorem ipsum dolor",
+    "start": "1970-01-01T00:00:00.000Z",
+    "end": "1970-01-01T00:00:00.000Z",
+    "allDay": true,
+    "description": "test",
+    "location": "barcelona",
+    "coordinates": "123123123",
+    "price": "free",
+    "eventApiId": 12323,
+    "bookingLink": "LINK",
+    "type": "Activity",
+    "pictures": "reeeeee",
+    "rating": 3.2,
+    "tripId": 2
+}
+```
+
+### UsersOnTrips (m - n Bridge)
+
+Routes:
+
+```bash
+# find all UsersOnTrips
+GET /users-on-trips
+# find UsersOnTrips by id
+GET /users-on-trips/:id
+# create new UsersOnTrips -> look at CreateUsersOnTripDto below for example
+POST /users-on-trips
+# update UsersOnTrips -> look at CreateUsersOnTripDto below for updatable properties
+PATCH /users-on-trips/:id
+# Delete UsersOnTrips
+DELETE /users-on-trips/:id
+```
+
+Data Transfer Objects:
+
+```json
+CreateUsersOnTripDto:
+{
+    "userId": 10,
+    "tripId": 2
+}
+```
+
+### Trip
+
+Routes:
+
+```bash
+# find all trip
+GET /trip
+# find tripby id
+GET /trip/:id
+# create new trip-> look at CreateUsersOnTripDto below for example
+POST /trip
+# update trip-> look at CreateUsersOnTripDto below for updatable properties
+PATCH /trip/:id
+# Delete trip
+DELETE /trip/:id
+```
+
+Data Transfer Objects:
+
+```json
+CreateTripDto:
+{
+    "start": "1970-01-01T00:00:00.000Z",
+    "end": "1970-01-01T00:00:00.000Z",
+    "destination": "Senegal"
 }
 ```
