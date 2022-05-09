@@ -1,1 +1,1 @@
-export const logged = true;
+export const logged = false;
