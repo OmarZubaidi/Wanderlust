@@ -8,13 +8,13 @@ interface Props {
   setName: Function;
 }
 
-function LoginScreen({ name, setName }: Props) {
+function LoginScreen({ setUserEmail }: Props) {
   return (
     <Stack.Navigator>
       <Stack.Screen
         name='LoginScreen'
         component={Login}
-        initialParams={{ name, setName }}
+        initialParams={{ setUserEmail }}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
