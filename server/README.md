@@ -34,6 +34,29 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Setup Database
+
+```bash
+# setup database
+npx prisma migrate dev --name init
+
+# open db web view
+npx prisma studio
+```
+## Setup Environmental Variables
+
+```bash
+PORT = 1234
+# add your db username and password
+DATABASE_URL=postgresql://user:password@localhost:5432/wanderlust?schema=public
+
+# Auth0 Tenant Name and Region (us, eu...)
+AUTH0_ISSUER_URL=https://tenant-name.region.auth0.com/
+# Auth0 Custom Api Identifier 
+AUTH0_AUDIENCE=https://yourapiidentifier.com
+#Signing Algorithm RS256
+```
+
 ## Routes
 
 Following routes are available for the web and mobile application.
@@ -192,6 +215,8 @@ GET /users-on-trips
 GET /users-on-trips/:id
 # create new UsersOnTrips -> look at CreateUsersOnTripDto below for example
 POST /users-on-trips
+# create many trips with single tripId and multiple userIds
+POST /users-on-trips/many
 # update UsersOnTrips -> look at CreateUsersOnTripDto below for updatable properties
 PATCH /users-on-trips/:id
 # Delete UsersOnTrips
@@ -205,6 +230,16 @@ CreateUsersOnTripDto:
 {
     "userId": 10,
     "tripId": 2
+}
+CreateManyUsersOnTripDto:
+{
+    "tripId": 2,
+    "userIds": [
+        14,
+        10,
+        15,
+        22
+    ]
 }
 ```
 

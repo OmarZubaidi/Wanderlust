@@ -6,7 +6,9 @@ import {
   Param,
   Patch,
   Post,
+  UseGuards,
 } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { CreateUserDto } from './dtos/create-user-dto';
 import { UpdateUserDto } from './dtos/update-user-dto';
 import { UserService } from './user.service';
@@ -30,16 +32,21 @@ export class UserController {
     return this.userService.findByEmail(email);
   }
 
+  // TODO: Add for important routes
+  // @UseGuards(AuthGuard('jwt'))
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
     return this.userService.create(createUserDto);
   }
 
+  // TODO: Add for important routes
+  // @UseGuards(AuthGuard('jwt'))
   @Delete(':id')
   deleteById(@Param('id') id: string) {
     return this.userService.deleteById(id);
   }
 
+  // @UseGuards(AuthGuard('jwt'))
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.userService.update(id, updateUserDto);

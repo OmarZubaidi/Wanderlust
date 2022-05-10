@@ -7,7 +7,10 @@ import {
 } from '@nestjs/common';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { CreateUsersOnTripDto } from './dto/create-users-on-trip.dto';
+import {
+  CreateManyUsersOnTripDto,
+  CreateUsersOnTripDto,
+} from './dto/create-users-on-trip.dto';
 import { UpdateUsersOnTripDto } from './dto/update-users-on-trip.dto';
 import { UsersOnTrips } from './interface/UsersOnTrips';
 
@@ -33,6 +36,51 @@ export class UsersOnTripsService {
         // if hotel exists, error P2002
         if (error.code === 'P2002') {
           throw new ForbiddenException('Credentials taken');
+        }
+      } else {
+        throw new HttpException(
+          {
+            status: HttpStatus.NOT_ACCEPTABLE,
+            error: 'Missing properties + ' + error,
+          },
+          HttpStatus.NOT_ACCEPTABLE,
+        );
+      }
+    }
+  }
+
+  // TODO: prevent same users with same trip multiple times
+  async createMany(
+    createManyUsersOnTripDto: CreateManyUsersOnTripDto,
+  ): Promise<any> {
+    const { tripId, userIds } = createManyUsersOnTripDto;
+
+    const data = userIds.map((user) => {
+      return {
+        tripId: tripId,
+        userId: +user,
+      };
+    });
+
+    try {
+      const created = await this.prisma.usersOnTrips.createMany({
+        data,
+      });
+      return created;
+    } catch (error) {
+      // TODO refactor error messaging
+      if (error instanceof PrismaClientKnownRequestError) {
+        // if hotel exists, error P2002
+        if (error.code === 'P2002') {
+          throw new ForbiddenException('Credentials taken');
+        } else {
+          throw new HttpException(
+            {
+              status: HttpStatus.NOT_ACCEPTABLE,
+              error: 'Missing properties + ' + error,
+            },
+            HttpStatus.NOT_ACCEPTABLE,
+          );
         }
       } else {
         throw new HttpException(

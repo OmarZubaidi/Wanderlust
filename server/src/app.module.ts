@@ -11,9 +11,20 @@ import { FlightModule } from './flight/flight.module';
 import { EventModule } from './event/event.module';
 import { UsersOnTripsModule } from './users-on-trips/users-on-trips.module';
 import { TripModule } from './trip/trip.module';
+import { AuthzModule } from './authz/authz.module';
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }), PrismaModule, UserModule, HotelModule, FlightModule, EventModule, UsersOnTripsModule, TripModule],
+  imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
+    PrismaModule,
+    UserModule,
+    HotelModule,
+    FlightModule,
+    EventModule,
+    UsersOnTripsModule,
+    TripModule,
+    AuthzModule,
+  ],
   controllers: [AppController, UserController],
   providers: [AppService, UserService],
 })
