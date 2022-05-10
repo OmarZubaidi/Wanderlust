@@ -30,6 +30,7 @@ export const Navbar: React.FC<NavbarProos> = ({ logged }) => {
               </Link>
               <a
                 id='logout_button'
+                className={styles.logout}
                 onClick={() => logout({ returnTo: 'http://localhost:3000' })}
               >
                 Logout

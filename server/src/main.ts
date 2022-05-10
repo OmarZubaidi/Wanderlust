@@ -6,6 +6,9 @@ const PORT = process.env.PORT || 3332;
 async function bootstrap() {
   // create application instance with express by default
   const app = await NestFactory.create(AppModule);
+
+  app.enableCors();
+
   await app.listen(PORT, () =>
     Logger.log(`🚀 Server is running on http://localhost:${PORT} 🚀`),
   );
