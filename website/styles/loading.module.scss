@@ -3,6 +3,7 @@
 @import 'variables';
 
 .loadingContainer {
+  position: relative;
   width: 100vw;
   height: 90vh;
   display: flex;
@@ -12,7 +13,7 @@
 
 $f-primary: 'Josefin Sans', sans-serif;
 $f-secondary: 'Indie Flower', cursive;
-$c-front: #ffffff;
+$c-front: #1d1f20;
 $c-back: #1d1f20;
 $c-back-light: #383838;
 $c-hilight: $mainBlue;
@@ -26,8 +27,8 @@ $s-footer-height: 3rem;
 // }
 
 .svg_calLoader {
-  width: 230px;
-  height: 230px;
+  width: 300px;
+  height: 300px;
   transform-origin: 115px 115px;
   animation: 1.4s linear infinite loader-spin;
 }

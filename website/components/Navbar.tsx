@@ -9,9 +9,7 @@ type NavbarProos = {
 
 export const Navbar: React.FC<NavbarProos> = ({ logged }) => {
   const [open, setOpen] = useState(false);
-
-  const { loginWithRedirect, logout } = useAuth0();
-
+  const { loginWithRedirect, logout, user } = useAuth0();
   const show = open ? 'show' : undefined;
 
   return (
@@ -39,6 +37,10 @@ export const Navbar: React.FC<NavbarProos> = ({ logged }) => {
             <button
               onClick={() => setOpen((prev) => !prev)}
               className='avatar'
+              style={{
+                background: `url(${user?.picture})`,
+                backgroundSize: 'contain',
+              }}
             ></button>
           </div>
         ) : (

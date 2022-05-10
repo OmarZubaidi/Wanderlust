@@ -4,7 +4,7 @@ import { Hotel } from './hotel.type';
 import { UsersOnTrips } from './usersOnTrips.type';
 
 export interface Trip {
-  id: number;
+  id?: number;
   start: Date;
   end: Date;
   destination: string;
@@ -12,5 +12,5 @@ export interface Trip {
   Flights?: Flight[];
   Events?: EventType[]; // ts didn't like Event as a name
   UsersOnTrips?: UsersOnTrips[];
-  createdAt: Date;
+  createdAt?: Date;
 }
