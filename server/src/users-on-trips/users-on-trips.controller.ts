@@ -8,7 +8,10 @@ import {
   Delete,
 } from '@nestjs/common';
 import { UsersOnTripsService } from './users-on-trips.service';
-import { CreateUsersOnTripDto } from './dto/create-users-on-trip.dto';
+import {
+  CreateManyUsersOnTripDto,
+  CreateUsersOnTripDto,
+} from './dto/create-users-on-trip.dto';
 import { UpdateUsersOnTripDto } from './dto/update-users-on-trip.dto';
 
 @Controller('users-on-trips')
@@ -18,6 +21,11 @@ export class UsersOnTripsController {
   @Post()
   create(@Body() createUsersOnTripDto: CreateUsersOnTripDto) {
     return this.usersOnTripsService.create(createUsersOnTripDto);
+  }
+
+  @Post('/many')
+  createMany(@Body() createManyUsersOnTripDto: CreateManyUsersOnTripDto) {
+    return this.usersOnTripsService.createMany(createManyUsersOnTripDto);
   }
 
   @Get()
