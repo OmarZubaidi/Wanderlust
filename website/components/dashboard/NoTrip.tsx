@@ -1,11 +1,17 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 import styles from '../../styles/dashboard/noTrip.module.scss';
+import {
+  deleteCachedAddedFriends,
+  deleteCachedTrip,
+} from '../../utils/localStorage';
 
 export const NoTrip: React.FC = () => {
   const router = useRouter();
 
   const navigateToTripForm = () => {
+    deleteCachedTrip();
+    deleteCachedAddedFriends();
     router.push('/trip');
   };
 

@@ -1,12 +1,17 @@
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 import styles from '../../styles/dashboard/SideBar.module.scss';
+import {
+  deleteCachedAddedFriends,
+  deleteCachedTrip,
+} from '../../utils/localStorage';
 
 export const SideBar: React.FC = () => {
   const router = useRouter();
 
   const navigateToTripForm = () => {
+    deleteCachedTrip();
+    deleteCachedAddedFriends();
     router.push('/trip');
   };
 

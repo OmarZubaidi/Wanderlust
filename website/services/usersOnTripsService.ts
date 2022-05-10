@@ -4,16 +4,16 @@ const serverUrl = process.env.SERVER_URL || 'http://localhost:3333';
 
 export const usersOnTripsServiceCreate = async (
   tripId: number,
-  userId: number
+  userIds: number[]
 ) => {
   try {
-    console.log({ tripId, userId });
-    const response = await fetch(serverUrl + '/users-on-trips', {
+    console.log(userIds);
+    const response = await fetch(serverUrl + '/users-on-trips/many', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ tripId, userId }),
+      body: JSON.stringify({ tripId, userIds }),
     });
 
     const data = await response.json();
