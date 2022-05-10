@@ -3,6 +3,7 @@ import {
   HttpException,
   HttpStatus,
   Injectable,
+  NotAcceptableException,
   NotFoundException,
 } from '@nestjs/common';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime';
@@ -49,16 +50,11 @@ export class FlightService {
         // if flight exists, error P2002
         if (error.code === 'P2002') {
           throw new ForbiddenException('Credentials taken');
+        } else {
+          throw new NotAcceptableException('Error:' + error);
         }
-      } else {
-        throw new HttpException(
-          {
-            status: HttpStatus.NOT_ACCEPTABLE,
-            error: 'Missing properties + ' + error,
-          },
-          HttpStatus.NOT_ACCEPTABLE,
-        );
       }
+      throw new NotAcceptableException('Error:' + error);
     }
   }
 
