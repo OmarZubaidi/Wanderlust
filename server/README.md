@@ -248,17 +248,17 @@ CreateManyUsersOnTripDto:
 Routes:
 
 ```bash
-# find all trip
-GET /trip
-# find tripby id, 
+# find all trips
+GET /trips
+# find trip by id, 
 # includes Hotels, Flights, Events, UsersOnTrips
-GET /trip/:id
+GET /trips/:id
 # create new trip-> look at CreateUsersOnTripDto below for example
-POST /trip
+POST /trips
 # update trip-> look at CreateUsersOnTripDto below for updatable properties
-PATCH /trip/:id
+PATCH /trips/:id
 # Delete trip
-DELETE /trip/:id
+DELETE /trips/:id
 ```
 
 Data Transfer Objects:

@@ -3,6 +3,7 @@ import {
   HttpException,
   HttpStatus,
   Injectable,
+  NotAcceptableException,
   NotFoundException,
 } from '@nestjs/common';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime';
@@ -36,16 +37,11 @@ export class UsersOnTripsService {
         // if hotel exists, error P2002
         if (error.code === 'P2002') {
           throw new ForbiddenException('Credentials taken');
+        } else {
+          throw new NotAcceptableException('Error:' + error);
         }
-      } else {
-        throw new HttpException(
-          {
-            status: HttpStatus.NOT_ACCEPTABLE,
-            error: 'Missing properties + ' + error,
-          },
-          HttpStatus.NOT_ACCEPTABLE,
-        );
       }
+      throw new NotAcceptableException('Error:' + error);
     }
   }
 
@@ -54,8 +50,10 @@ export class UsersOnTripsService {
     createManyUsersOnTripDto: CreateManyUsersOnTripDto,
   ): Promise<any> {
     const { tripId, userIds } = createManyUsersOnTripDto;
-
-    const data = userIds.map((user) => {
+    // remove duplicate ids
+    const uniqueUserIds = new Set(userIds);
+    // create data object array to store in db
+    const data = Array.from(uniqueUserIds).map((user) => {
       return {
         tripId: tripId,
         userId: +user,
@@ -68,29 +66,15 @@ export class UsersOnTripsService {
       });
       return created;
     } catch (error) {
-      // TODO refactor error messaging
       if (error instanceof PrismaClientKnownRequestError) {
         // if hotel exists, error P2002
         if (error.code === 'P2002') {
           throw new ForbiddenException('Credentials taken');
         } else {
-          throw new HttpException(
-            {
-              status: HttpStatus.NOT_ACCEPTABLE,
-              error: 'Missing properties + ' + error,
-            },
-            HttpStatus.NOT_ACCEPTABLE,
-          );
+          throw new NotAcceptableException('Error:' + error);
         }
-      } else {
-        throw new HttpException(
-          {
-            status: HttpStatus.NOT_ACCEPTABLE,
-            error: 'Missing properties + ' + error,
-          },
-          HttpStatus.NOT_ACCEPTABLE,
-        );
       }
+      throw new NotAcceptableException('Error:' + error);
     }
   }
 
