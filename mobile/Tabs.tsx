@@ -29,19 +29,19 @@ interface TabProps {
 function options({ route }: OptionsProps) {
   return {
     headerStyle: {
-      backgroundColor: colorStyles.blue,
+      backgroundColor: colorStyles.mainBlue,
     },
     headerTitleStyle: {
-      color: colorStyles.darkBlue,
+      color: colorStyles.darkTextColor,
       fontSize: 24,
       marginBottom: 10,
     },
     tabBarStyle: {
-      backgroundColor: colorStyles.blue,
+      backgroundColor: colorStyles.mainBlue,
     },
     headerTitle: 'Wanderlust',
-    tabBarActiveTintColor: colorStyles.background,
-    tabBarInactiveTintColor: colorStyles.darkBlue,
+    tabBarActiveTintColor: colorStyles.white,
+    tabBarInactiveTintColor: colorStyles.darkTextColor,
     tabBarItemStyle: {
       marginTop: 10,
       paddingBottom: 10,
