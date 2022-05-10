@@ -12,20 +12,36 @@ export const userServiceCreate = async (user: User) => {
       body: JSON.stringify(user),
     });
     const newUser = await res.json();
-    return newUser;
+    if (newUser.status === 404) throw new Error(newUser.message);
+    return newUser as User;
   } catch (error: any) {
     console.log(error.message);
-    return false;
+    return error.message;
   }
 };
 
-export const userServiceGetByEmail = async (email: string) => {
+type ErrorResponse = {
+  response: Response;
+  status: number;
+  message: string;
+  name: string;
+};
+
+type Response = {
+  message: string;
+  statusCode: string;
+};
+
+export const userServiceGetByEmail = async (
+  email: string
+): Promise<User | string> => {
   try {
     const res = await fetch(serverUrl + `/users/email/${email}`);
     const user = await res.json();
-    return user;
+    if (user.status === 404) throw new Error(user.message);
+    return user as User;
   } catch (error: any) {
     console.log(error.message);
-    return false;
+    return error.message;
   }
 };

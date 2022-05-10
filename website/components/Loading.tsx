@@ -4,17 +4,17 @@ import styles from '../styles/loading.module.scss';
 export const Loading = () => {
   return (
     <div className={styles.loadingContainer}>
-      <svg className={styles.svg_calLoader} width='230' height='230'>
+      <svg className={styles.svg_calLoader} width='300' height='300'>
         <path
           className={styles.cal_loader__path}
           d='M86.429 40c63.616-20.04 101.511 25.08 107.265 61.93 6.487 41.54-18.593 76.99-50.6 87.643-59.46 19.791-101.262-23.577-107.142-62.616C29.398 83.441 59.945 48.343 86.43 40z'
           fill='none'
           stroke='#0099cc'
-          stroke-width='4'
-          stroke-linecap='round'
-          stroke-linejoin='round'
-          stroke-dasharray='10 10 10 10 10 10 10 432'
-          stroke-dashoffset='77'
+          strokeWidth='4'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeDasharray='10 10 10 10 10 10 10 432'
+          strokeDashoffset='77'
         />
         <path
           className={styles.cal_loader__plane}

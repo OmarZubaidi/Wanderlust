@@ -13,7 +13,7 @@ const HomePage = () => {
     const signup = async () => {
       if (user && user.email) {
         const isUserSigned = await getUserByEmail(user.email);
-        if (isUserSigned.status === 404) {
+        if (isUserSigned === 'Not Found') {
           const parsedUser = parseUser(user);
           const newUser = await createUser(parsedUser);
         }
