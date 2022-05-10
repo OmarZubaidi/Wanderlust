@@ -17,10 +17,12 @@ import {
   getCachedAddedFriends,
   getCachedTrip,
 } from '../../utils/localStorage';
+import { AddFriendForm } from './friendsFormComponents/AddFriendForm';
+import { FinalizeTrip } from './friendsFormComponents/FinalizeTrip';
+import { AddedFriendsList } from './friendsFormComponents/AddedFriendsList';
 
 export const FriendsFormComponent: React.FC = () => {
   const router = useRouter();
-
   const [trip, setTrip] = useState<CacheTrip>(router.query as CacheTrip);
   const [emailFriend, setEmailFriend] = useState<string>('');
   const [addedFriends, setAddedFriends] = useState<User[]>([]);
@@ -33,8 +35,6 @@ export const FriendsFormComponent: React.FC = () => {
     if (friendsFromLocalStorage && friendsFromLocalStorage.length > 0) {
       setAddedFriends(friendsFromLocalStorage);
     }
-    console.log('TRIP', trip);
-    console.log('FRIENDs', addedFriends);
   }, []);
 
   useEffect(() => {
@@ -74,11 +74,10 @@ export const FriendsFormComponent: React.FC = () => {
   };
 
   const finalizeGroup = async (tripId: number) => {
-    addedFriends
-      .map((u) => u.id)
-      .forEach(async (id) => {
-        await createUsersOnTrips(tripId, id!);
-      });
+    await createUsersOnTrips(
+      tripId,
+      addedFriends.map((u) => u.id!)
+    );
   };
 
   const finalize = async () => {
@@ -115,72 +114,19 @@ export const FriendsFormComponent: React.FC = () => {
       <div className={styles.left}>
         <h2 className={'titleH2 ' + styles.title}>Add your friends</h2>
 
-        <form className={styles.addFriendForm}>
-          <div className={styles.input}>
-            <label htmlFor='friend'>
-              Add your friend by email{' '}
-              <span className={styles.maxPeople}> Max 10</span>
-            </label>
-            <input
-              type='text'
-              id='friend'
-              placeholder='Email'
-              onChange={(e) => setEmailFriend(e.target.value)}
-              value={emailFriend}
-              className={styles.input_field}
-            />
-          </div>
-          <button
-            onClick={(e: any) => {
-              addFriend(e);
-            }}
-            type='submit'
-            className={styles.addFriend}
-          ></button>
-        </form>
+        <AddFriendForm
+          setEmailFriend={setEmailFriend}
+          emailFriend={emailFriend}
+          addFriend={addFriend}
+        />
+
         <p className='error'>{error}</p>
-
-        <p className={styles.submit_description}>
-          Create the trip with the current status or continue expanding the trip
-          details with flights.
-        </p>
-
-        <div className={styles.submit}>
-          <input
-            type='submit'
-            value='Finalize'
-            className={'button ' + styles.finalize}
-            onClick={finalizeAndGoToDashboard}
-          />
-          <button
-            onClick={finalizeAndGoToFlight}
-            type='submit'
-            className={styles.continue}
-          >
-            Continue to Flights
-            <div className={styles.arrow}></div>
-          </button>
-        </div>
+        <FinalizeTrip
+          finalizeAndGoToDashboard={finalizeAndGoToDashboard}
+          finalizeAndGoToFlight={finalizeAndGoToFlight}
+        />
       </div>
-      <div className={styles.right}>
-        <h4 className={styles.friends_title}>Added friends</h4>
-        <ul className={styles.userList}>
-          {addedFriends
-            .filter((x) => x.id)
-            .map((user) => (
-              <li key={user.id} className={styles.user}>
-                <div
-                  className={styles.avatar}
-                  style={{
-                    backgroundImage: `url(${user.pictureUrl})`,
-                    backgroundSize: 'contain',
-                  }}
-                ></div>
-                {user.username}
-              </li>
-            ))}
-        </ul>
-      </div>
+      <AddedFriendsList addedFriends={addedFriends} />
     </section>
   );
 };
