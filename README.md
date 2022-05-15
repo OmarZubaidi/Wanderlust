@@ -5,7 +5,7 @@
   <img
     height='150'
     src='./Logo.png'
-    alt='logo'
+    alt='Logo'
   />
 </div>
 
@@ -153,7 +153,6 @@ Contributions are welcome!
 If you have a suggestion that would make this better:
 
 - Fork the relevant project (e.g. [mobile](https://github.com/OmarZubaidi/Wanderlust-Mobile/fork)).
-- Set up commitizen using `npm i`.
 - Create a branch using `git checkout -b feat-YOUR_FEATURE_NAME`.
 - Work on it and commit changes using `npx cz` (you'll get an interactive prompt for the commit message).
 - Push to your branch using `git push origin feat-YOUR_FEATURE_NAME`.
@@ -168,5 +167,6 @@ Project Link: [on GitHub](https://github.com/OmarZubaidi/Wanderlust/).
 ## Acknowledgements
 
 - [Amadeus](https://developers.amadeus.com/)
+- [Auth0](https://auth0.com/)
 - [Google Maps](https://developers.google.com/maps/)
 - [TomTom](https://developer.tomtom.com/)
