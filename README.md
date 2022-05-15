@@ -18,6 +18,23 @@
   <summary>Table of Contents</summary>
   <ul>
     <li>
+      <a href='#demo-and-screenshots'>
+        Demo and Screenshots
+      </a>
+      <ul>
+        <li>
+          <a href='#website'>
+            Website
+          </a>
+        </li>
+        <li>
+          <a href='#mobile'>
+            Mobile
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
       <a href='#about-the-project'>
         About the Project
       </a>
@@ -51,6 +68,52 @@
     </li>
   </ul>
 </details>
+
+## Demo and Screenshots
+
+Watch the [demo](https://youtu.be/C0Esqn_uidY).
+
+### Website
+
+<img
+  src='./screenshots/website/01%20-%20Welcome.png'
+  alt='Website, Welcome Page'
+/>
+<img
+  src='./screenshots/website/02%20-%20Jobs.png'
+  alt='Website, Jobs Page'
+/>
+<img
+  src='./screenshots/website/03%20-%20Filtered%20Jobs.png'
+  alt='Website, Jobs Page Filtered'
+/>
+<img
+  src='./screenshots/website/04%20-%20Job%20Details.png'
+  alt='Website, Job Details Dialog'
+/>
+
+### Mobile
+
+<img
+  src='./screenshots/mobile/01%20-%20Welcome.png'
+  alt='Mobile, Welcome Page'
+  width='384'
+/>
+<img
+  src='./screenshots/mobile/02%20-%20Jobs.png'
+  alt='Mobile, Jobs Page'
+  width='384'
+/>
+<img
+  src='./screenshots/mobile/03%20-%20Filtered%20Jobs.png'
+  alt='Mobile, Jobs Page Filtered'
+  width='384'
+/>
+<img
+  src='./screenshots/mobile/04%20-%20Job%20Details.png'
+  alt='Mobile, Job Details Dialog'
+  width='384'
+/>
 
 ## About the Project
 
@@ -87,9 +150,10 @@ Contributions are welcome!
 If you have a suggestion that would make this better:
 
 - Fork the relevant project (e.g. [mobile](https://github.com/OmarZubaidi/Wanderlust-Mobile/fork)).
-- Create a branch using `git checkout -b feature-YOUR_FEATURE_NAME`.
-- Work on it and commit changes using `git commit -m 'YOUR_COMMIT_MESSAGE'`.
-- Push to your branch using `git push origin feature-YOUR_FEATURE_NAME`.
+- Set up commitizen using `npm i`.
+- Create a branch using `git checkout -b feat-YOUR_FEATURE_NAME`.
+- Work on it and commit changes using `npx cz` (you'll get an interactive prompt for the commit message).
+- Push to your branch using `git push origin feat-YOUR_FEATURE_NAME`.
 - [Open a pull request](https://github.com/OmarZubaidi/Wanderlust-Mobile/compare).
 
 ## Contact
