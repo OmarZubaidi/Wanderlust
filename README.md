@@ -140,7 +140,7 @@ You pick your dates and location; it suggests flights and accommodation to book 
 
 ## Getting Started
 
-To get a local copies up and running, follow the instructions in the relevant repos:
+To get local copies up and running, follow the instructions in the relevant repos:
 
 - [Website](https://github.com/OmarZubaidi/Wanderlust-Website)
 - [Mobile App](https://github.com/OmarZubaidi/Wanderlust-Mobile)
@@ -169,4 +169,5 @@ Project Link: [on GitHub](https://github.com/OmarZubaidi/Wanderlust/).
 - [Amadeus](https://developers.amadeus.com/)
 - [Auth0](https://auth0.com/)
 - [Google Maps](https://developers.google.com/maps/)
+- [Open Weather Map](https://openweathermap.org/api)
 - [TomTom](https://developer.tomtom.com/)
