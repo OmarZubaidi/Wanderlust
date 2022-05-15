@@ -1,5 +1,6 @@
 # Wanderlust
 
+<!-- TODO update logo when we decide on one -->
 <div align='center'>
   <img
     height='150'
@@ -70,6 +71,8 @@
 </details>
 
 ## Demo and Screenshots
+
+<!-- TODO update video link, consider adding portion of live-stream with Q&A, and screenshots -->
 
 Watch the [demo](https://youtu.be/C0Esqn_uidY).
 
@@ -160,7 +163,7 @@ If you have a suggestion that would make this better:
 
 Creators: [Daniele Capano](https://github.com/daniele24134/), [Gabriele Zannini](https://github.com/CosmicZanna/), [Omar Zubaidi](https://github.com/OmarZubaidi/), and [Stefan Feldner](https://github.com/stefanfeldner/).
 
-Project Link: [on GitHub](https://github.com/OmarZubaidi/safood/).
+Project Link: [on GitHub](https://github.com/OmarZubaidi/Wanderlust/).
 
 ## Acknowledgements
 
