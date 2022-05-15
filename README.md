@@ -74,47 +74,20 @@
 
 <!-- TODO update video link, consider adding portion of live-stream with Q&A, and screenshots -->
 
-Watch the [demo](https://youtu.be/C0Esqn_uidY).
+Watch the [demo](https://youtu.be/LINK).
 
 ### Website
 
 <img
-  src='./screenshots/website/01%20-%20Welcome.png'
-  alt='Website, Welcome Page'
-/>
-<img
-  src='./screenshots/website/02%20-%20Jobs.png'
-  alt='Website, Jobs Page'
-/>
-<img
-  src='./screenshots/website/03%20-%20Filtered%20Jobs.png'
-  alt='Website, Jobs Page Filtered'
-/>
-<img
-  src='./screenshots/website/04%20-%20Job%20Details.png'
-  alt='Website, Job Details Dialog'
+  src='./screenshots/website/01%20-%20PAGE%20NAME.png'
+  alt='Website, PAGE NAME'
 />
 
 ### Mobile
 
 <img
-  src='./screenshots/mobile/01%20-%20Welcome.png'
-  alt='Mobile, Welcome Page'
-  width='384'
-/>
-<img
-  src='./screenshots/mobile/02%20-%20Jobs.png'
-  alt='Mobile, Jobs Page'
-  width='384'
-/>
-<img
-  src='./screenshots/mobile/03%20-%20Filtered%20Jobs.png'
-  alt='Mobile, Jobs Page Filtered'
-  width='384'
-/>
-<img
-  src='./screenshots/mobile/04%20-%20Job%20Details.png'
-  alt='Mobile, Job Details Dialog'
+  src='./screenshots/mobile/01%20-%20PAGE%20NAME.png'
+  alt='Mobile, PAGE NAME'
   width='384'
 />
 
