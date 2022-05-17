@@ -143,4 +143,3 @@ Project Link: [on GitHub](https://github.com/OmarZubaidi/Wanderlust/).
 - [Auth0](https://auth0.com/)
 - [Google Maps](https://developers.google.com/maps/)
 - [Open Weather Map](https://openweathermap.org/api)
-- [TomTom](https://developer.tomtom.com/)
