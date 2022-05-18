@@ -73,20 +73,69 @@
 
 <!-- TODO update video link, consider adding portion of live-stream with Q&A, and screenshots -->
 
-Watch the [demo](https://youtu.be/LINK).
+Watch the [demo](https://youtu.be/2pH0rkqnBt4).
 
 ### Website
 
 <img
-  src='./screenshots/website/01%20-%20PAGE%20NAME.png'
-  alt='Website, PAGE NAME'
+  src='./screenshots/website/01%20-%20Landing%20Page.png'
+  alt='Website, Landing Page'
+/>
+<img
+  src='./screenshots/website/02%20-%20Trip%20Planner.png'
+  alt='Website, Trip Planner'
+/>
+<img
+  src='./screenshots/website/03%20-%20Flight%20Booking.png'
+  alt='Website, Flight Booking'
+/>
+<img
+  src='./screenshots/website/04%20-%20Hotel%20Booking.png'
+  alt='Website, Hotel Booking'
+/>
+<img
+  src='./screenshots/website/05%20-%20Event%20Booking.png'
+  alt='Website, Event Booking'
+/>
+<img
+  src='./screenshots/website/06%20-%20Calendar.png'
+  alt='Website, Calendar'
+/>
+<img
+  src='./screenshots/website/07%20-%20Map.png'
+  alt='Website, Map'
 />
 
 ### Mobile
 
 <img
-  src='./screenshots/mobile/01%20-%20PAGE%20NAME.png'
-  alt='Mobile, PAGE NAME'
+  src='./screenshots/mobile/01%20-%20Login.png'
+  alt='Mobile, Login'
+  width='384'
+/>
+<img
+  src='./screenshots/mobile/02%20-%20Calendar.png'
+  alt='Mobile, Calendar'
+  width='384'
+/>
+<img
+  src='./screenshots/mobile/03%20-%20Map.png'
+  alt='Mobile, Map'
+  width='384'
+/>
+<img
+  src='./screenshots/mobile/04%20-%20Flight.png'
+  alt='Mobile, Flight'
+  width='384'
+/>
+<img
+  src='./screenshots/mobile/05%20-%20Hotel.png'
+  alt='Mobile, Hotel'
+  width='384'
+/>
+<img
+  src='./screenshots/mobile/06%20-%20Trip%20Selector.png'
+  alt='Mobile, Trip Selector'
   width='384'
 />
 
