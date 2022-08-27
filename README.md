@@ -73,7 +73,7 @@
 
 <!-- TODO update video link, consider adding portion of live-stream with Q&A, and screenshots -->
 
-Watch the [demo](https://youtu.be/2pH0rkqnBt4) or [try it](https://wanderlust-web.netlify.app/) for yourself.
+Watch the [demo](https://youtu.be/2pH0rkqnBt4)!
 
 ### Website
 
