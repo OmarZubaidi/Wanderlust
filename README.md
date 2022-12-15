@@ -18,8 +18,8 @@
   <summary>Table of Contents</summary>
   <ul>
     <li>
-      <a href='#demo-and-screenshots'>
-        Demo and Screenshots
+      <a href='#screenshots'>
+        Screenshots
       </a>
       <ul>
         <li>
@@ -69,11 +69,7 @@
   </ul>
 </details>
 
-## Demo and Screenshots
-
-<!-- TODO update video link, consider adding portion of live-stream with Q&A, and screenshots -->
-
-Watch the [demo](https://youtu.be/2pH0rkqnBt4)!
+## Screenshots
 
 ### Website
 
